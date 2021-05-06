@@ -1,0 +1,30 @@
+<div class="container spacer">
+  <div class="card">
+    <div class="card-header">Account Info</div>
+    <div class="card-body" *ngIf="accountResult">
+
+      <table class="table table-dark">
+        <tr>
+          <th>Account Id</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Current Balance</th>
+          <th>Transaction Id</th>
+
+
+        </tr>
+        <tr *ngFor="let account of accountResult">
+          <td>{{account.id}}</td>
+          <td>{{account.client.firstName}}</td>
+          <td>{{account.client.lastName}}</td>
+          <td>{{account.balance}} €</td>
+          <td *ngFor="let transaction of account.transactions">
+            {{transaction.transactionId}} </td>
+
+        </tr>
+      </table>
+    </div>
+  </div>
+
+
+</div>
